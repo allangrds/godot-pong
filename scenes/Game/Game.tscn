@@ -1,18 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/Racket/Racket.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/field/Field.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/Racket/PlayerInputComponent.gd" type="Script" id=4]
+[ext_resource path="res://entities/Racket/AiInputComponent.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Game/Game.gd" type="Script" id=6]
 
 [node name="Game" type="Node"]
+script = ExtResource( 6 )
 
 [node name="Field" parent="." instance=ExtResource( 3 )]
 
 [node name="Racket" parent="." instance=ExtResource( 2 )]
 position = Vector2( 50, 256 )
 
+[node name="PlayerInputComponent" type="Node" parent="Racket"]
+script = ExtResource( 4 )
+
 [node name="Racket2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 974, 256 )
 
+[node name="AiInputComponent" type="Node" parent="Racket2"]
+script = ExtResource( 5 )
+ball_path = NodePath("../../Ball")
+
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 256 )
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+[connection signal="goal_left" from="Field" to="." method="_on_Field_goal_left"]
+[connection signal="goal_right" from="Field" to="." method="_on_Field_goal_right"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

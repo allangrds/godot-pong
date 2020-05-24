@@ -10,17 +10,24 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "AiInputComponent",
+"language": "GDScript",
+"path": "res://entities/Racket/AiInputComponent.gd"
+}, {
+"base": "Node",
 "class": "PlayerInputComponent",
 "language": "GDScript",
 "path": "res://entities/Racket/PlayerInputComponent.gd"
 } ]
 _global_script_class_icons={
+"AiInputComponent": "",
 "PlayerInputComponent": ""
 }
 
 [application]
 
 config/name="Pong"
+run/main_scene="res://scenes/Game/Game.tscn"
 config/icon="res://icon.png"
 
 [display]

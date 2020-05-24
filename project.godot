@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "PlayerInputComponent",
+"language": "GDScript",
+"path": "res://entities/Racket/PlayerInputComponent.gd"
+} ]
 _global_script_class_icons={
-
+"PlayerInputComponent": ""
 }
 
 [application]
@@ -20,7 +25,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/height=768
+window/size/height=500
 window/size/resizable=false
 
 [rendering]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/HUD_font.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CountdownContainer" type="PanelContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -54.5
+margin_bottom = 54.5
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CountdownContainer"]
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 89.0
+
+[node name="ActionText" type="Label" parent="CountdownContainer/CenterContainer"]
+margin_left = 495.0
+margin_right = 529.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+
+[node name="PointsDisplay" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = 30.0
+margin_bottom = 69.0
+custom_constants/separation = 75
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScorePlayerOne" type="Label" parent="PointsDisplay"]
+margin_left = 435.0
+margin_right = 474.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="ScorePlayerTwo" type="Label" parent="PointsDisplay"]
+margin_left = 549.0
+margin_right = 588.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"

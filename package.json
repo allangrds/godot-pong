@@ -1,0 +1,29 @@
+{
+  "name": "godot-pong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "commitizen": "4.1.2",
+    "cz-conventional-changelog": "3.2.0"
+  },
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allangrds/godot-pong.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allangrds/godot-pong/issues"
+  },
+  "homepage": "https://github.com/allangrds/godot-pong#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
